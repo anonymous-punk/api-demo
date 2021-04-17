@@ -25,7 +25,7 @@ export const getTotalStaked = async (address: string, block: string): Promise<nu
     const cakeBalance = await cakeContract.methods.balanceOf(address).call(undefined, blockNumber);
     balance = balance.plus(cakeBalance);
   } catch (error) {
-    console.error(`CAKE balance error: ${error}`);
+    console.error(`pipi balance error: ${error}`);
   }
 
   try {
@@ -49,7 +49,7 @@ export const getTotalStaked = async (address: string, block: string): Promise<nu
     );
     balance = balance.plus(new BigNumber(cakeLPBalance.toSignificant(18)).times(1e18));
   } catch (error) {
-    console.error(`CAKE-BNB LP error: ${error}`);
+    console.error(`pipi-ht LP error: ${error}`);
   }
 
   try {

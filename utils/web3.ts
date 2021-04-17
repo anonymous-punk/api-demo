@@ -1,9 +1,9 @@
 import Web3 from "web3";
 
 const BSC_NODE_RPC = [
-  "https://bsc-dataseed.binance.org/",
-  "https://bsc-dataseed1.defibit.io/",
-  "https://bsc-dataseed1.ninicoin.io/",
+  "https://http-mainnet-node.huobichain.com/",
+  "https://http-mainnet-node.defibox.com",
+  "https://http-mainnet.hecochain.com",
 ];
 
 const BSC_ARCHIVE_NODE_RPC = ["https://bsc-private-dataseed1.nariox.org/", "https://bsc-private-dataseed4.nariox.org/"];
