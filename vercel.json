@@ -13,6 +13,10 @@
     {
       "source": "/api/governance/vote/:address/:block",
       "destination": "/api/governance/vote"
+    },
+    {
+      "source": "/api/nft/punk/:punkId",
+      "destination": "/api/nft/punk"
     }
   ],
   "headers": [

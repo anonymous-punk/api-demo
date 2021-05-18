@@ -16,7 +16,7 @@ export class Route {
   public constructor(pairs: Pair[], input: Currency, output?: Currency) {
     invariant(pairs.length > 0, 'PAIRS')
     invariant(
-      pairs.every(pair => pair.chainId === pairs[0].chainId),
+      pairs.every((pair) => pair.chainId === pairs[0].chainId),
       'CHAIN_IDS'
     )
     invariant(

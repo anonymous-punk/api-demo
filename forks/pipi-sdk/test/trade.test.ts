@@ -10,7 +10,7 @@ import {
   TokenAmount,
   Trade,
   TradeType,
-  WETH
+  WETH,
 } from '../src'
 
 describe('Trade', () => {

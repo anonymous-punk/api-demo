@@ -4,14 +4,14 @@ import { ChainId, WETH as _WETH, TradeType, Rounding, Token, TokenAmount, Pair, 
 const ADDRESSES = [
   '0x0000000000000000000000000000000000000001',
   '0x0000000000000000000000000000000000000002',
-  '0x0000000000000000000000000000000000000003'
+  '0x0000000000000000000000000000000000000003',
 ]
 const CHAIN_ID = ChainId.BSCTESTNET
 const WETH = _WETH[ChainId.BSCTESTNET]
 const DECIMAL_PERMUTATIONS: [number, number, number][] = [
   [0, 0, 0],
   [0, 9, 18],
-  [18, 18, 18]
+  [18, 18, 18],
 ]
 
 function decimalize(amount: number, decimals: number): bigint {
@@ -19,7 +19,7 @@ function decimalize(amount: number, decimals: number): bigint {
 }
 
 describe('entities', () => {
-  DECIMAL_PERMUTATIONS.forEach(decimals => {
+  DECIMAL_PERMUTATIONS.forEach((decimals) => {
     describe(`decimals permutation: ${decimals}`, () => {
       let tokens: Token[]
       it('Token', () => {
@@ -45,7 +45,7 @@ describe('entities', () => {
           new Pair(
             new TokenAmount(tokens[2], decimalize(1, tokens[2].decimals)),
             new TokenAmount(WETH, decimalize(1234, WETH.decimals))
-          )
+          ),
         ]
       })
 
@@ -105,7 +105,7 @@ describe('entities', () => {
               new Pair(
                 new TokenAmount(tokens[1], decimalize(5, tokens[1].decimals)),
                 new TokenAmount(WETH, decimalize(10, WETH.decimals))
-              )
+              ),
             ],
             tokens[1]
           )
@@ -159,7 +159,7 @@ describe('entities', () => {
                     decimalize(10, WETH.decimals) +
                       (tokens[1].decimals === 9 ? BigInt('30090280812437312') : BigInt('30090270812437322'))
                   )
-                )
+                ),
               ],
               tokens[1]
             )
