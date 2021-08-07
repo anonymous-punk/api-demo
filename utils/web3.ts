@@ -1,17 +1,17 @@
 import Web3 from "web3";
 
-const BSC_NODE_RPC = [
-  "https://http-mainnet-node.huobichain.com/",
-  "https://http-mainnet-node.defibox.com",
-  "https://http-mainnet.hecochain.com",
+const HECO_NODE_RPC = [
+  "https://http-testnet.hecochain.com",
+  // "https://http-mainnet-node.defibox.com",
+  // "https://http-mainnet.hecochain.com",
 ];
 
-const BSC_ARCHIVE_NODE_RPC = ["https://bsc-private-dataseed1.nariox.org/", "https://bsc-private-dataseed4.nariox.org/"];
+const HECO_ARCHIVE_NODE_RPC = ["https://bsc-private-dataseed1.nariox.org/", "https://bsc-private-dataseed4.nariox.org/"];
 
 export const getWeb3 = (archive = false): Web3 => {
   const provider: string = archive
-    ? BSC_ARCHIVE_NODE_RPC[Math.floor(Math.random() * BSC_ARCHIVE_NODE_RPC.length)]
-    : BSC_NODE_RPC[Math.floor(Math.random() * BSC_NODE_RPC.length)];
+    ? HECO_ARCHIVE_NODE_RPC[Math.floor(Math.random() * HECO_ARCHIVE_NODE_RPC.length)]
+    : HECO_NODE_RPC[Math.floor(Math.random() * HECO_NODE_RPC.length)];
 
   return new Web3(new Web3.providers.HttpProvider(provider, { timeout: 30000 }));
 };

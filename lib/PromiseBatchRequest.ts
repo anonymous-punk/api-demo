@@ -7,6 +7,7 @@ export class PromisifyBatchRequest<R> {
   web3: Web3;
   batch: BatchRequest;
   requests: Array<Promise<R>> = [];
+  
   constructor() {
     this.web3 = getWeb3();
     this.batch = new this.web3.BatchRequest();
@@ -24,6 +25,7 @@ export class PromisifyBatchRequest<R> {
     });
     this.requests.push(request);
   };
+
   execute = async () => {
     this.batch.execute();
     return await Promise.all(this.requests);
