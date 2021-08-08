@@ -6,7 +6,10 @@ const HECO_NODE_RPC = [
   // "https://http-mainnet.hecochain.com",
 ];
 
-const HECO_ARCHIVE_NODE_RPC = ["https://bsc-private-dataseed1.nariox.org/", "https://bsc-private-dataseed4.nariox.org/"];
+const HECO_ARCHIVE_NODE_RPC = [
+  "https://bsc-private-dataseed1.nariox.org/",
+  "https://bsc-private-dataseed4.nariox.org/",
+];
 
 export const getWeb3 = (archive = false): Web3 => {
   const provider: string = archive

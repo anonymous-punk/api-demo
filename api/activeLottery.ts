@@ -1,12 +1,9 @@
 import { NowRequest, NowResponse } from "@vercel/node";
 import { getIssueIndex, getBaseLottery, getDrawedLottery } from "../utils/lottery";
-import { defaultDrawedLotteryInfo } from '../configs/lottery'
-import { ILottery, LotteryStatus, ResError } from '../types/lottery';
+import { defaultDrawedLotteryInfo } from "../configs/lottery";
+import { ILottery, LotteryStatus, ResError } from "../types/lottery";
 
-export const activelottery = async (): Promise<
-  | ILottery
-  | ResError
-> => {
+export const activelottery = async (): Promise<ILottery | ResError> => {
   const issueIndex = await getIssueIndex();
   if (typeof issueIndex !== "string") {
     return issueIndex;
@@ -17,15 +14,15 @@ export const activelottery = async (): Promise<
     // not drawed
     return {
       ...baseLottery,
-      ...defaultDrawedLotteryInfo
-    }
+      ...defaultDrawedLotteryInfo,
+    };
   }
   const drawedLotterInfo = await getDrawedLottery(issueIndex);
 
   return {
     ...baseLottery,
-    ...drawedLotterInfo
-  }
+    ...drawedLotterInfo,
+  };
 };
 
 export default async (req: NowRequest, res: NowResponse): Promise<void> => {
