@@ -1,9 +1,9 @@
 import Web3 from "web3";
 
 const HECO_NODE_RPC = [
-  "https://http-testnet.hecochain.com",
-  // "https://http-mainnet-node.defibox.com",
-  // "https://http-mainnet.hecochain.com",
+  // "https://http-testnet.hecochain.com",
+  "https://http-mainnet-node.defibox.com",
+  "https://http-mainnet.hecochain.com",
 ];
 
 const HECO_ARCHIVE_NODE_RPC = [
